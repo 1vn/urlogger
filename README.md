@@ -21,6 +21,10 @@ end
 
 By default, it will log the exact URL paths given. You can also pass configure an initializer to set only match certain URLs by regex. Simply add an `initializer/urlogger.rb` file set `Urlogger.regex_match` within it to the regex object you wish to check the url against.
 
+A simple HTML page which breaks down regex/url matches by day is available via mounting the engine in your application's `routes.rb` file
+```
+  mount Urlogger::Engine => '/urlogger'
+```
 ## Installation
 Add this line to your application's Gemfile:
 
