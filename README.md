@@ -2,7 +2,7 @@
 Logs url visit based on absolute match or regex matching. Comes included with page that breaks down # of visits per day at each route.
 
 ## Usage
-Instantialize a `Urlogger::VisitCounter` in the desire controller and have it log the `request.fullpath` as a `before_action`
+Instantiate a `Urlogger::VisitCounter` in the desired controller and pass the desired path (i.e. `request.fullpath`) into the `log_url` method as a `before_action`
 Example for logging every url visit in your application:
 ```
 class ApplicationController < ActionController::Base
@@ -19,7 +19,7 @@ end
 
 ```
 
-By default, it will log the exact URL paths given. You can also pass configure an initializer to set only match certain URLs by regex. Simply add an `initializer/urlogger.rb` file set `Urlogger.regex_match` within it to the regex object you wish to check the url against.
+By default, it will log the exact URL paths given. You can also configure an initializer to only match certain URLs by regex. Simply add an `initializer/urlogger.rb` file set `Urlogger.regex_match` within it to the regex object you wish to check the url against.
 
 A simple HTML page which breaks down regex/url matches by day is available via mounting the engine in your application's `routes.rb` file:
 ```
