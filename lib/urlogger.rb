@@ -1,6 +1,7 @@
 require 'urlogger/engine'
 
 module Urlogger
+  # Counter which handles saving ActiveRecord based on regex matching the url
   class VisitCounter
     def initialize(regex_match = '%s')
       @regex_match = regex_match

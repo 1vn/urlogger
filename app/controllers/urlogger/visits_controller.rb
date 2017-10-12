@@ -1,6 +1,7 @@
 require_dependency 'urlogger/application_controller'
 
 module Urlogger
+  # Controller for page to view breakdown of url visits per day
   class VisitsController < ApplicationController
     http_basic_authenticate_with name: 'dhh', password: 'secret'
     before_action :set_visit, only: :show
