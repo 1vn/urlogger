@@ -1,0 +1,5 @@
+<%- headers = ['url', 'date', 'count'] -%>
+<%= CSV.generate_line headers %>
+<%- @visits.each do |visit| -%>
+<%= CSV.generate_line([visit[0][0], visit[0][1], visit[1]]) -%>
+<%- end -%>

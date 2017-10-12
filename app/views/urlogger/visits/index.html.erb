@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Visits</h1>
+<%= link_to 'Download CSV list', visits_path(format: :csv) %>
+<table>
+  <thead>
+    <tr>
+      <th>Url</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+      <tr>
+        <td>url</td>
+        <td>date</td>
+        <td>count</td>
+      </tr>
+    <% @visits.each do |visit| %>
+      <tr>
+        <td><%= visit[0][0] %></td>
+        <td><%= visit[0][1] %></td>
+        <td><%= visit[1] %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
